@@ -1,3 +1,53 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+body {
+    margin: 0;
+    padding: 0;
+    /* overflow: hidden; */
+}
+
+.bg-hero {
+    background-image: url('../src/images/bg.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.glass-bg {
+    background: rgba(175, 139, 21, 0.1);
+    /* Adjust the opacity as needed */
+    backdrop-filter: blur(6px);
+    /* Adjust the blur amount as needed */
+    position: relative;
+    z-index: 1;
+}
+
+.glass-bg::before {
+    content: '';
+    background: url('../src/images/bg.png');
+    /* Replace with your image URL */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 100%;
+    z-index: -1;
+    filter: grayscale(100%) blur(5px);
+    /* Adjust the blur and other filters as needed */
+}
+
+.bg-shop {
+    background-image: url('../src/images/Rec.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.active-title {
+    font-size: 16px;
+    color: #9f9f9f;
+    cursor: pointer;
+    border-bottom: 1px solid #9f9f9f;
+    transition: border-bottom 0.3s ease;
+
+}
