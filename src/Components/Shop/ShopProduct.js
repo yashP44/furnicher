@@ -1,9 +1,11 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import r1 from '../../images/r1.png'
 import r2 from '../../images/r2.png'
 import r3 from '../../images/r3.png'
 import r4 from '../../images/r4.png'
 import { Link } from 'react-router-dom'
+import { FaRupeeSign } from 'react-icons/fa'
+
 
 const ShopProduct = () => {
     const furnitureData = [
@@ -248,19 +250,51 @@ const ShopProduct = () => {
             bgColorClass: 'bg-red-400',
         },
     ];
+    const [electronicsData, setElectronicsData] = useState([]);
+
+    useEffect(() => {
+        fetch(' https://api.escuelajs.co/api/v1/products')
+            .then((response) => response.json())
+            .then((data) => {
+                if (Array.isArray(data)) {
+                    const limitedData = data.slice(0, 40);
+                    setElectronicsData(limitedData);
+                    console.log(limitedData);
+                } else {
+                    console.error('Data received is not an array');
+                }
+            })
+            .catch((error) => {
+                console.error('Error fetching data:', error);
+            });
+    }, []);
 
     return (
         <section className='px-[5%]'>
             <div className='w-full h-[100vh] my-[40px] overflow-y-scroll lg:my-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 md:gap-14 justify-between'>
-                {furnitureData.map((item, index) => (
+                {/* {furnitureData.map((item, index) => (
                     <div key={index} className='h-[450px] gap-2 grid relative bg-[#F4F5F7] hover:scale-90 hover:-skew-y-6 hover:rounded-2xl hover:shadow-xl hover:duration-700'>
                         <img src={item.imageSrc} height='300px' alt='not found' className='' />
                         <p className={`h-14 w-14 rounded-full text-white flex items-center justify-center absolute top-8 right-8 ${item.bgColorClass}`}>{item.discount}</p>
-                        <h2 className='text-xl font-bold font-serif text-[#3A3A3A] px-3 mt-2'>
+                        <h2 className='text-xl font-bold  text-[#3A3A3A] px-3 mt-2'>
                             <Link to='/shop/productdetails'>{item.title}</Link>
                         </h2>
-                        <p className='text-md font-bold font-serif text-[#898989] px-3 '>{item.description}</p>
-                        <p className='text-base font-extrabold font-serif text-[#3A3A3A] px-3 mb-2'>{item.price}</p>
+                        <p className='text-md font-bold  text-[#898989] px-3 '>{item.description}</p>
+                        <p className='text-base font-extrabold  text-[#3A3A3A] px-3 mb-2'>{item.price}</p>
+                    </div>
+                ))} */}
+                {electronicsData.map((item, index) => (
+                    <div key={index} className='md:h-auto gap-2 grid relative bg-[#F4F5F7] hover:scale-90 hover:-skew-y-6 hover:rounded-2xl hover:shadow-xl hover:duration-700'>
+                        <img src={item.images} height='300px' alt='Product' className='' />
+                        <h2 className='text-lg font-semibold text-[#3A3A3A] px-3 mt-2'>
+                            <Link to={`/shop/productdetails/${item.id}`}>
+                                {item.title.length > 30 ? `${item.title.substring(0, 30)}...` : item.title}
+                            </Link>
+                        </h2>
+                        <p className='text-md font-thin text-[#898989] px-3 '>
+                            {item.description.length > 80 ? `${item.description.substring(0, 80)}...` : item.description}
+                        </p>
+                        <p className='flex items-center text-base font-extrabold text-[#3A3A3A] px-3 mb-2'><FaRupeeSign />&nbsp;{item.price}</p>
                     </div>
                 ))}
             </div>

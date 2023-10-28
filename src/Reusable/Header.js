@@ -14,7 +14,7 @@ const Header = () => {
                     <div className='inline-flex relative gap-3 my-14 md:mt-[50px] lg:my-0'>
                         <Link to='/' className='flex gap-3'>
                             <img src={logo} alt='not found' />
-                            <span className='font-bold text-4xl font-serif'>Furniro
+                            <span className='font-bold text-4xl '>Furniro
                             </span>
                         </Link>
                         {/* <div className='absolute lg:hidden w-full right-0'> */}
@@ -32,15 +32,15 @@ const Header = () => {
                     <hr className={`${!open ? 'flex' : 'hidden'} h-2 w-full text-[#e5e7eb] my-2 lg:hidden`} />
                     <ul className={`${!open ? 'flex ' : 'hidden '} items-center flex-col gap-16 px-5 my-10 lg:my-0 lg:p-0 lg:flex lg:flex-row lg:gap-10`}>
                         <li>
-                            <Link className={splitLocation[1] === "" ? "text-[#B88E2F] text-[18px]  duration-500 text-base font-sans font-light cursor-pointer " : ""} to='/'> Home</Link>
+                            <Link className={splitLocation[1] === "" ? "text-[#B88E2F] text-[18px]  duration-500 text-base  font-light cursor-pointer " : ""} to='/'> Home</Link>
                         </li>
                         <li>
-                            <Link className={splitLocation[1] === "shop" ? "text-[#B88E2F] text-[18px] duration-500 text-base font-sans font-light cursor-pointer" : ""} to='/shop'>Shop</Link>
+                            <Link className={splitLocation[1] === "shop" ? "text-[#B88E2F] text-[18px] duration-500 text-base  font-light cursor-pointer" : ""} to='/shop'>Shop</Link>
                         </li>
-                        <li className={` ${splitLocation[1] === "contact" ? "text-[#B88E2F] text-[18px] font-light duration-500 text-base font-sans cursor-pointer" : ""}</ul>`}>
+                        <li className={` ${splitLocation[1] === "contact" ? "text-[#B88E2F] text-[18px] font-light duration-500 text-base  cursor-pointer" : ""}</ul>`}>
                             <Link to='/contact'>Contact</Link>
                         </li>
-                        <li className={` ${splitLocation[1] === "blog" ? "text-[#B88E2F] text-[18px] font-light duration-500 text-base font-sans cursor-pointer" : ""}</ul>`}>
+                        <li className={` ${splitLocation[1] === "blog" ? "text-[#B88E2F] text-[18px] font-light duration-500 text-base  cursor-pointer" : ""}</ul>`}>
                             <Link to='/blog'>Blog</Link>
                         </li>
                     </ul>

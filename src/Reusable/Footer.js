@@ -22,10 +22,10 @@ const Footer = () => {
                     <div className='w-full md:w-1/2 lg:w-1/3 flex justify-around'>
                         <div className='w-1/2'>
                             <h1 className='font-normal text-base text-[#9F9F9F] py-0 md:py-6'>Links</h1>
-                            <p className={`${splitLocation[1] === "" ? "text-[#B88E2F] text-[18px]  duration-500 text-base font-sans font-light cursor-pointer " : ""} my-2`}><Link to='/'> Home</Link></p>
-                            <p className={`${splitLocation[1] === "shop" ? "text-[#B88E2F] text-[18px]  duration-500 text-base font-sans font-light cursor-pointer " : ""} my-2`}><Link to='/shop'>Shop</Link></p>
-                            <p className={`${splitLocation[1] === "contact" ? "text-[#B88E2F] text-[18px]  duration-500 text-base font-sans font-light cursor-pointer " : ""} my-2`}><Link to='/contact' >Contact</Link></p>
-                            <p className={`${splitLocation[1] === "contact" ? "text-[#B88E2F] text-[18px]  duration-500 text-base font-sans font-light cursor-pointer " : ""} my-2`}><Link to='/blog' >Blog</Link></p>
+                            <p className={`${splitLocation[1] === "" ? "text-[#B88E2F] text-[18px]  duration-500 text-base  font-light cursor-pointer " : ""} my-2`}><Link to='/'> Home</Link></p>
+                            <p className={`${splitLocation[1] === "shop" ? "text-[#B88E2F] text-[18px]  duration-500 text-base  font-light cursor-pointer " : ""} my-2`}><Link to='/shop'>Shop</Link></p>
+                            <p className={`${splitLocation[1] === "contact" ? "text-[#B88E2F] text-[18px]  duration-500 text-base  font-light cursor-pointer " : ""} my-2`}><Link to='/contact' >Contact</Link></p>
+                            <p className={`${splitLocation[1] === "contact" ? "text-[#B88E2F] text-[18px]  duration-500 text-base  font-light cursor-pointer " : ""} my-2`}><Link to='/blog' >Blog</Link></p>
                         </div>
 
                         <div className='w-1/2'>

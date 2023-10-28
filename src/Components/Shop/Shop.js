@@ -3,10 +3,8 @@ import Layout from '../../Reusable/Layout'
 import { Link } from 'react-router-dom'
 import { FaGreaterThan, FaHSquare, FaJsSquare, FaSlidersH, FaSquare, FaSquareFull, FaSquarespace, FaStreetView } from 'react-icons/fa'
 import ShopProduct from './ShopProduct'
-import F1 from '../../images/F1.png'
-import F2 from '../../images/F2.png'
-import F3 from '../../images/F3.png'
-import F4 from '../../images/F4.png'
+
+import Brandnav from '../../Reusable/Brandnav'
 const Shop = () => {
     return (
         <Layout>
@@ -39,20 +37,7 @@ const Shop = () => {
                 </div>
             </section>
             <ShopProduct />
-            <section className='px-[5%] bg-[#FAF3EA] w-full mt-10 py-10 md:py-16 text-center flex flex-wrap lg:flex-row gap-10 md:shadow-lg'>
-                <div className=''>
-                    <img src={F1} alt='not found' />
-                </div>
-                <div className=''>
-                    <img src={F2} alt='not found' />
-                </div>
-                <div className=''>
-                    <img src={F3} alt='not found' />
-                </div>
-                <div className=''>
-                    <img src={F4} alt='not found' />
-                </div>
-            </section>
+            <Brandnav />
         </Layout >
     )
 }

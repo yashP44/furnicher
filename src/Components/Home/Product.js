@@ -132,24 +132,24 @@ const Product = () => {
     return (
         <>
             <section className='px-[5%] w-full h-[100vh] relative py-[20px] flex flex-col justify-center items-center'>
-                <h1 className='text-4xl font-bold font-serif text-[#333]'>Our Products</h1>
+                <h1 className='text-4xl font-bold  text-[#333]'>Our Products</h1>
                 <div className='w-full my-[40px] overflow-scroll lg:my-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 md:gap-14 justify-between'>
                     {fakeFurnitureData.map((item, index) => (
                         <div
                             key={index}
                             className="gap-2 grid relative bg-[#F4F5F7] hover:scale-90 hover:-skew-y-6 hover:rounded-2xl hover:shadow-xl hover:duration-700"
                         >
-                            <img src={item.imageSrc} height="300px" alt="not found" className="" />
+                            <img src={item.imageSrc} height="300px" alt="not found" className="w-full" />
                             <p className={`h-14 w-14 rounded-full text-white flex items-center justify-center absolute top-8 right-8 ${item.bgColorClass}`}>
                                 {item.discount}
                             </p>
-                            <h2 className="text-xl font-bold font-serif text-[#3A3A3A] px-3 mt-2 cursor-pointer">
+                            <h2 className="text-xl font-bold  text-[#3A3A3A] px-3 mt-2 cursor-pointer">
                                 <Link to='/shop'>{item.title}</Link>
                             </h2>
-                            <p className="text-md font-light font-serif text-[#898989] px-3">
+                            <p className="text-md font-light  text-[#898989] px-3">
                                 {item.description}
                             </p>
-                            {/* <p className="text-base font-extrabold font-serif text-[#3A3A3A] px-3 mb-2">
+                            {/* <p className="text-base font-extrabold  text-[#3A3A3A] px-3 mb-2">
                                 {item.price}
                             </p> */}
                         </div>

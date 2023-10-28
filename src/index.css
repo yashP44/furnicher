@@ -8,6 +8,19 @@ body {
     /* overflow: hidden; */
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: Montserrat;
+}
+
+p {
+    font-family: Poppins;
+}
+
 .bg-hero {
     background-image: url('../src/images/bg.png');
     background-repeat: no-repeat;

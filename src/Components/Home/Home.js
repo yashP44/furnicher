@@ -4,7 +4,6 @@ import Range from './Range'
 import Product from './Product'
 import Slider from './Slider'
 import Layout from '../../Reusable/Layout'
-
 const Home = () => {
     return (
         <Layout>
@@ -15,5 +14,4 @@ const Home = () => {
         </Layout>
     )
 }
-
 export default Home
