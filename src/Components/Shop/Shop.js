@@ -1,11 +1,42 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import Layout from '../../Reusable/Layout'
-import { Link } from 'react-router-dom'
+import { Link, useLocation, useParams } from 'react-router-dom'
 import { FaGreaterThan, FaHSquare, FaJsSquare, FaSlidersH, FaSquare, FaSquareFull, FaSquarespace, FaStreetView } from 'react-icons/fa'
 import ShopProduct from './ShopProduct'
-
 import Brandnav from '../../Reusable/Brandnav'
+import { useDispatch, useSelector } from 'react-redux';
+import { setLoading, setProducts } from '../../store/productslice'
+import { fetchData } from '../apiService'
 const Shop = () => {
+    const dispatch = useDispatch();
+    const location = useLocation();
+    const [selectedCategory, setSelectedCategory] = useState('');
+    const [filteredData, setFilteredData] = useState([]);
+    const electronicsData = useSelector(state => state.products.electronicsData);
+    useEffect(() => {
+        fetchData(dispatch);
+    }, [dispatch]);
+
+    useEffect(() => {
+        if (selectedCategory === '') {
+            setFilteredData(electronicsData);
+        } else {
+            const filtered = electronicsData.filter(item => item.category === selectedCategory);
+            setFilteredData(filtered);
+            console.log(filtered)
+        }
+    }, [selectedCategory, electronicsData]);
+
+
+    const handleCategoryChange = (e) => {
+        setSelectedCategory(e.target.value);
+    };
+
+    const navigationIcons = [
+        <FaSlidersH className='text-xl' />,
+        <FaHSquare className='text-xl' />,
+        <FaStreetView className='text-xl' />
+    ];
     return (
         <Layout>
             <section>
@@ -20,26 +51,35 @@ const Shop = () => {
                         </li>
                     </ul>
                 </div>
-                <div className="px-[5%] w-full md:h-[100px] bg-[#F9F1E7] flex flex-wrap justify-between  items-center space-y-5 py-5 md:space-y-0 md:py-0 md:flex-row md:items-center md:gap-5 md:flex-wrap">
-                    <FaSlidersH className='text-xl' />
-                    <FaHSquare className='text-xl' />
-                    <FaStreetView className='text-xl' />
-                    <p className='text-base font-normal text-[#666]'>Showing 1-16 of 32 results</p>
-
-                    <div className=' flex gap-5 text-right mx-auto'>
+                <div className="px-[5%] w-full md:h-[100px] bg-[#F9F1E7] flex flex-wrap justify-between items-center space-y-5 py-5 md:space-y-0 md:py-0 md:flex-row md:items-center md:gap-5 md:flex-wrap">
+                    <div className='flex gap-5'>
+                        {navigationIcons.map((icon, index) => (
+                            <div key={index}>{icon}</div>
+                        ))}</div>
+                    <div className='flex gap-5 text-right mr-0'>
                         <div className='flex items-center'>
-                            <span className='text-[18px]'>Show&nbsp;&nbsp;</span><p className='bg-white px-5 py-3  text-[#666]'>16</p>
+                            <span className='text-xs md:text-[18px]'>Showing&nbsp;&nbsp;</span><p className='bg-white px-5 py-3  text-[#666]'>{filteredData.length}</p>
                         </div>
                         <div className='flex items-center'>
-                            <span className='text-[18px]'>Short by&nbsp;&nbsp;</span><p className='bg-white px-5 py-3 text-[#666]'>Default</p>
+                            <span className='text-xs     md:text-[18px]'>Category&nbsp;&nbsp;</span>
+                            <select id="sortBy"
+                                className='px-5 py-3 text-[#666] outline-none'
+                                onChange={handleCategoryChange}
+                                value={selectedCategory} >
+                                <option value="">All</option>
+                                <option value="electronics">Electronics</option>
+                                <option value="jewelery">Jewelery</option>
+                                <option value="men's clothing">Men's clothing</option>
+                                <option value="women's clothing">Women's clothing</option>
+                            </select>
                         </div>
                     </div>
                 </div>
             </section>
-            <ShopProduct />
+            <ShopProduct electronicsData={electronicsData} filteredData={filteredData}
+            />
             <Brandnav />
         </Layout >
     )
 }
-
 export default Shop

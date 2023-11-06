@@ -1,0 +1,261 @@
+const furnitureData = [
+    {
+        imageSrc: r1,
+        discount: '-20%',
+        title: 'Elegant Leather Sofa',
+        description: 'Premium leather sofa with recliner',
+        price: 'Rp 3,500,000',
+        bgColorClass: 'bg-red-400',
+    },
+    {
+        imageSrc: r2,
+        discount: '-15%',
+        title: 'Modern Glass Coffee Table',
+        description: 'Stylish glass coffee table with metal frame',
+        price: 'Rp 1,200,000',
+        bgColorClass: 'bg-sky-500',
+    },
+    {
+        imageSrc: r3,
+        discount: '-25%',
+        title: 'Antique Oak Dining Table',
+        description: 'Solid oak dining table with ornate carvings',
+        price: 'Rp 2,800,000',
+        bgColorClass: 'bg-red-400',
+    },
+    {
+        imageSrc: r4,
+        discount: '-10%',
+        title: 'Luxury Velvet Armchair',
+        description: 'Plush velvet armchair with tufted design',
+        price: 'Rp 1,800,000',
+        bgColorClass: 'bg-green-500',
+    },
+    {
+        imageSrc: r4,
+        discount: '-30%',
+        title: 'Vintage Bookshelf',
+        description: 'Retro bookshelf with multiple shelves',
+        price: 'Rp 1,500,000',
+        bgColorClass: 'bg-red-400',
+    },
+    {
+        imageSrc: r3,
+        discount: '-15%',
+        title: 'Mid-Century Desk',
+        description: 'Sleek mid-century modern desk with storage',
+        price: 'Rp 1,900,000',
+        bgColorClass: 'bg-sky-500',
+    },
+    {
+        imageSrc: r2,
+        discount: '-20%',
+        title: 'Contemporary Lounge Chair',
+        description: 'Comfortable lounge chair for relaxation',
+        price: 'Rp 2,000,000',
+        bgColorClass: 'bg-red-400',
+    },
+    {
+        imageSrc: r1,
+        discount: '-10%',
+        title: 'Rustic Sideboard Cabinet',
+        description: 'Handcrafted wooden sideboard with storage',
+        price: 'Rp 2,500,000',
+        bgColorClass: 'bg-green-500',
+    },
+    {
+        imageSrc: r1,
+        discount: '-25%',
+        title: 'Designer Glass Dining Set',
+        description: 'Glass dining table and chairs set',
+        price: 'Rp 4,000,000',
+        bgColorClass: 'bg-red-400',
+    },
+    {
+        imageSrc: r2,
+        discount: '-15%',
+        title: 'Minimalist Office Chair',
+        description: 'Ergonomic office chair with adjustable features',
+        price: 'Rp 800,000',
+        bgColorClass: 'bg-sky-500',
+    },
+    {
+        imageSrc: r3,
+        discount: '-30%',
+        title: 'Queen Size Bed Frame',
+        description: 'Sturdy bed frame for a restful sleep',
+        price: 'Rp 2,600,000',
+        bgColorClass: 'bg-red-400',
+    },
+    {
+        imageSrc: r4,
+        discount: '-20%',
+        title: 'Industrial Bar Stool',
+        description: 'Metal bar stool with a distressed finish',
+        price: 'Rp 600,000',
+        bgColorClass: 'bg-green-500',
+    },
+    {
+        imageSrc: r4,
+        discount: '-10%',
+        title: 'Classic Reclining Chair',
+        description: 'Traditional reclining chair with upholstery',
+        price: 'Rp 1,500,000',
+        bgColorClass: 'bg-green-500',
+    },
+    {
+        imageSrc: r2,
+        discount: '-15%',
+        title: 'Outdoor Patio Set',
+        description: 'Patio furniture set for outdoor relaxation',
+        price: 'Rp 3,200,000',
+        bgColorClass: 'bg-sky-500',
+    },
+    {
+        imageSrc: r1,
+        discount: '-25%',
+        title: 'Chic Bedside Table',
+        description: 'Bedside table with a modern and chic design',
+        price: 'Rp 900,000',
+        bgColorClass: 'bg-red-400',
+    },
+    {
+        imageSrc: r1,
+        discount: '-25%',
+        title: 'Modern Glass Side Table',
+        description: 'Elegant glass side table with a metal base',
+        price: 'Rp 800,000',
+        bgColorClass: 'bg-red-400',
+    },
+    {
+        imageSrc: r1,
+        discount: '-30%',
+        title: 'Mid-Century Rocking Chair',
+        description: 'Stylish mid-century rocking chair for relaxation',
+        price: 'Rp 1,600,000',
+        bgColorClass: 'bg-red-400',
+    },
+    {
+        imageSrc: r3,
+        discount: '-15%',
+        title: 'Classic Wooden Desk',
+        description: 'Traditional wooden desk with multiple drawers',
+        price: 'Rp 1,400,000',
+        bgColorClass: 'bg-sky-500',
+    },
+    {
+        imageSrc: r4,
+        discount: '-20%',
+        title: 'Velvet Loveseat',
+        description: 'Comfortable velvet loveseat for two',
+        price: 'Rp 2,200,000',
+        bgColorClass: 'bg-red-400',
+    },
+    {
+        imageSrc: r4,
+        discount: '-10%',
+        title: 'Modern Wall Shelf',
+        description: 'Minimalist wall shelf for storage and display',
+        price: 'Rp 900,000',
+        bgColorClass: 'bg-green-500',
+    },
+    {
+        imageSrc: r3,
+        discount: '-25%',
+        title: 'Industrial Coffee Table',
+        description: 'Industrial-style coffee table with storage',
+        price: 'Rp 1,700,000',
+        bgColorClass: 'bg-red-400',
+    },
+    {
+        imageSrc: r2,
+        discount: '-15%',
+        title: 'Ergonomic Office Desk Chair',
+        description: 'Ergonomic desk chair with adjustable features',
+        price: 'Rp 1,100,000',
+        bgColorClass: 'bg-sky-500',
+    },
+    {
+        imageSrc: r1,
+        discount: '-20%',
+        title: 'Rustic Bedside Cabinet',
+        description: 'Handcrafted rustic bedside cabinet with drawer',
+        price: 'Rp 1,300,000',
+        bgColorClass: 'bg-red-400',
+    },
+    {
+        imageSrc: r1,
+        discount: '-10%',
+        title: 'Luxury Dining Set',
+        description: 'Luxury dining table and chairs set with marble top',
+        price: 'Rp 5,000,000',
+        bgColorClass: 'bg-green-500',
+    },
+    {
+        imageSrc: r2,
+        discount: '-30%',
+        title: 'Sleek TV Stand',
+        description: 'Sleek TV stand with open shelves and cable management',
+        price: 'Rp 1,300,000',
+        bgColorClass: 'bg-red-400',
+    },
+    {
+        imageSrc: r3,
+        discount: '-25%',
+        title: 'Contemporary Wardrobe',
+        description: 'Contemporary wardrobe with mirrored doors',
+        price: 'Rp 3,200,000',
+        bgColorClass: 'bg-red-400',
+    },
+    {
+        imageSrc: r4,
+        discount: '-15%',
+        title: 'Chic Bar Cart',
+        description: 'Chic bar cart for serving drinks in style',
+        price: 'Rp 700,000',
+        bgColorClass: 'bg-sky-500',
+    },
+    {
+        imageSrc: r1,
+        discount: '-20%',
+        title: 'Rattan Outdoor Lounge Set',
+        description: 'Rattan outdoor lounge set for outdoor comfort',
+        price: 'Rp 3,500,000',
+        bgColorClass: 'bg-red-400',
+    },
+    {
+        imageSrc: r2,
+        discount: '-10%',
+        title: 'Traditional Canopy Bed',
+        description: 'Elegant canopy bed for a royal sleep experience',
+        price: 'Rp 4,800,000',
+        bgColorClass: 'bg-green-500',
+    },
+    {
+        imageSrc: r3,
+        discount: '-20%',
+        title: 'Modern Reclining Sectional',
+        description: 'Spacious modern reclining sectional sofa',
+        price: 'Rp 4,000,000',
+        bgColorClass: 'bg-red-400',
+    },
+];
+
+// useEffect(() => {
+//     startLoading()
+//     fetch('https://api.escuelajs.co/api/v1/products')
+//         .then((response) => response.json())
+//         .then((data) => {
+//             if (Array.isArray(data)) {
+//                 const limitedData = data.slice(0, 40);
+//                 dispatch(setProducts(limitedData));
+//             } else {
+//                 console.error('Data received is not an array');
+//             }
+//             stopLoading()
+//         })
+//         .catch((error) => {
+//             console.error('Error fetching data:', error);
+//             stopLoading()
+//         });
+// }, [dispatch]);
