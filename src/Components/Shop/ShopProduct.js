@@ -6,7 +6,7 @@ import { useSelector } from 'react-redux';
 
 const ShopProduct = ({ filteredData }) => {
     const loading = useSelector(state => state.products.loading)
-    console.log(filteredData.slice(0, 3))
+    // console.log(filteredData.slice(0, 3))
     return (
         <section className='px-[5%]'>
             <div className='w-full h-[100vh] my-[40px] overflow-y-scroll lg:my-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 md:gap-14 justify-between'>
@@ -34,13 +34,13 @@ const ShopProduct = ({ filteredData }) => {
                         ))
                     )}
             </div>
-            <section className='w-full flex flex-wrap gap-8 justify-center items-center  md:space-x-10 md:gap-0'>
+            {/* <section className='w-full flex flex-wrap gap-8 justify-center items-center  md:space-x-10 md:gap-0'>
                 <section className='w-full flex flex-wrap gap-8 justify-center items-center md:space-x-10 md:gap-0'>
                     <span className='bg-[#B88E2F] p-8 rounded-lg text-white'><FaArrowLeft /></span>
                     <span className='bg-[#B88E2F] p-8 rounded-lg text-white'><FaICursor /></span>
                     <span className='bg-[#B88E2F] p-8 rounded-lg text-white'><FaArrowRight /></span>
                 </section>
-            </section>
+            </section> */}
         </section >
     )
 }

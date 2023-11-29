@@ -14,18 +14,18 @@ const Product = () => {
     }, [dispatch]);
     return (
         <>
-            <section className='px-[5%] w-full h-[100vh] relative py-[20px] flex flex-col justify-center items-center'>
-                <h1 className='text-4xl font-bold  text-[#333]'>Our Products</h1>
-                <div className='w-full my-[40px] overflow-scroll lg:my-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 md:gap-14 justify-between'>
+            <section className='px-[5%] w-full h-[100vh] relative flex flex-col justify-center items-center pb-5 md:pb-8 border border-b'>
+                <h1 className='text-4xl font-bold text-[#333] mt-8'>Our Products</h1>
+                <div className='w-full my-5 overflow-scroll md:my-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 md:gap-14 justify-between'>
                     {loading ?
                         <Loder />
                         :
                         rangeData.map((item, index) => (
                             <div
                                 key={item.id}
-                                className="gap-2 grid relative bg-[#F4F5F7] shadow-md p-4 transition-transform transform hover:rotate-3"
+                                className="gap-2 grid relative bg-[#F4F5F7] shadow-md p-5 transition-transform transform hover:rotate-3"
                             >
-                                <img src={item.image} alt="not found" className="w-full h-[250px]" />
+                                <img src={item.image} alt="not found" className="w-full h-[220px] md:h-[250px]" />
                                 <p className={`h-14 w-14 rounded-full text-white flex items-center justify-center absolute top-8 right-8`}>
                                     {item.discount}
                                 </p>

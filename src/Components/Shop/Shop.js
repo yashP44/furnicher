@@ -23,7 +23,7 @@ const Shop = () => {
         } else {
             const filtered = electronicsData.filter(item => item.category === selectedCategory);
             setFilteredData(filtered);
-            console.log(filtered)
+            // console.log(filtered)
         }
     }, [selectedCategory, electronicsData]);
 
@@ -51,11 +51,12 @@ const Shop = () => {
                         </li>
                     </ul>
                 </div>
-                <div className="px-[5%] w-full md:h-[100px] bg-[#F9F1E7] flex flex-wrap justify-between items-center space-y-5 py-5 md:space-y-0 md:py-0 md:flex-row md:items-center md:gap-5 md:flex-wrap">
-                    <div className='flex gap-5'>
+                <div className="px-[5%] w-full md:h-[100px] bg-[#F9F1E7] flex flex-wrap justify-center items-center space-y-5 py-5 md:space-y-0 md:py-0 md:flex-row md:items-center md:gap-5 md:flex-wrap">
+                    {/* <div className='flex gap-5'>
                         {navigationIcons.map((icon, index) => (
                             <div key={index}>{icon}</div>
-                        ))}</div>
+                        ))}
+                        </div> */}
                     <div className='flex gap-5 text-right mr-0'>
                         <div className='flex items-center'>
                             <span className='text-xs md:text-[18px]'>Showing&nbsp;&nbsp;</span><p className='bg-white px-5 py-3  text-[#666]'>{filteredData.length}</p>

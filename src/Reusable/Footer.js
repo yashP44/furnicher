@@ -8,7 +8,7 @@ const Footer = () => {
     const splitLocation = pathname.split("/");
     return (
         <>
-            <section className='px-[5%] py-[5%]'>
+            <section className='px-[5%] py-[4%]'>
                 <div className='flex flex-wrap space-y-8'>
                     <div className='w-full md:w-1/2 lg:w-1/3'>
                         <Link to='/' className='flex gap-3'>
@@ -52,8 +52,8 @@ const Footer = () => {
                             className='border-black border-b-2 p-1 outline-none' />
                         <button className='text-black border-[#9f9f9f] border-b-2 mx-5 p-1 outline-none'>SUBSCRIBE</button>
                     </div>
-                    <div className='w-full md:w-1/2 lg:w-1/3'>
-                        2023 furino. All rights reverved
+                    <div className='w-full text-center'>
+                        &#169;2023 furino. All rights reverved
                     </div>
                 </div>
             </section >
